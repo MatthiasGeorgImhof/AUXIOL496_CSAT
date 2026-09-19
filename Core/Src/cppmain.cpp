@@ -211,11 +211,11 @@ void cppmain()
 //	constexpr uint8_t uuid[] = {0xc8, 0x03, 0x52, 0xa6, 0x1d, 0x94, 0x40, 0xc9, 0x9b, 0x1d, 0xea, 0xac, 0xfd, 0xdd, 0xb2, 0x85};
 //	constexpr char node_name[50] = "AUXL496_CSAT";
 
-//	using TSHeart = TaskSendHeartBeat<SerardCyphal, CanardCyphal>;
-//	register_task_with_heap<TSHeart>(registration_manager, 2000, 100, 0, sercan_adapters);
+	using TSHeart = TaskSendHeartBeat<SerardCyphal, CanardCyphal>;
+	register_task_with_heap<TSHeart>(registration_manager, 2000, 100, 0, sercan_adapters);
 
-//	using TPHeart = TaskProcessHeartBeat<SerardCyphal, CanardCyphal>;
-//	register_task_with_heap<TPHeart>(registration_manager, 2000, 100, sercan_adapters);
+	using TPHeart = TaskProcessHeartBeat<SerardCyphal, CanardCyphal>;
+	register_task_with_heap<TPHeart>(registration_manager, 2000, 100, sercan_adapters);
 
 //	using TSendNodeList = TaskSendNodePortList<SerardCyphal, CanardCyphal>;
 //	register_task_with_heap<TSendNodeList>(registration_manager, &registration_manager, 10000, 100, 0, sercan_adapters);
